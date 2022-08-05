@@ -65,7 +65,7 @@ const CoinIndex = () => {
       <div>
         <input onChange={handleChange} type="text" name="search" value={search} placeholder="Search" />
       </div>
-      <h1 className='text-center mb-4'>Coins</h1>
+      <h1 className='text-center mb-4 mt-5'>Coins</h1>
       <Row>
       {filteredCoins.length > 0
           ?
@@ -79,8 +79,9 @@ const CoinIndex = () => {
                   <td className="col-1"><img className="col-4" src={image}/></td>
                   <td className="col-2">{name}</td>
                   <td className="col-1">{symbol}</td>
-                  <td>current price £{current_price}</td>
-                  <td  className="col-2"><Link to={`/coin/${id}`}>More info</Link></td>
+                  <td className="col-3">current price £{current_price}</td>
+                  <td className={coin.price_change_percentage_24h > 0 ? "text-success" : "text-danger"}>{coin.price_change_percentage_24h}</td>
+                  <td  className="col-2"><Link className="text-decoration-none text-white" to={`/coin/${id}`}>More info</Link></td>
                 </tr>
                 </tbody>
               </Table>

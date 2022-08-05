@@ -6,6 +6,7 @@ import PageNavbar from './components/PageNavbar'
 import CoinIndex from './components/CoinIndex'
 import CoinSingle from './components/CoinSingle'
 import NotFound from './components/NotFound'
+import HomePage from './components/HomePage'
 
 function App() {
 
@@ -15,8 +16,9 @@ function App() {
         <PageNavbar />
         <Routes>
           {/* HOME */}
+          <Route path="/" element={<HomePage />} />
           {/* Landing page with coin list */}
-          <Route path="/" element={<CoinIndex />} />
+          <Route path="/coins" element={<CoinIndex />} />
 
           {/* COIN SINGLE */}
           {/* Dynamic page rendering single coin info */}

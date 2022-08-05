@@ -4,7 +4,7 @@ const NotFound = () => {
   return (
     <div className='not-found'>
       <h1>404. YOU SHALL NOT GO HERE</h1>
-      <Link to="/">Go here instead </Link>
+      <Link to="/coins">Go here instead </Link>
     </div>
   )
 }

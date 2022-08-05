@@ -1,0 +1,11 @@
+.homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vw;
+  .logo{
+    max-width: 800px;
+
+  }
+}

@@ -11,12 +11,12 @@ const PageNavbar = () => {
 
   return (
     <Navbar expand="sm" >
-      <Container as="section">
+      <Container as="section" className="bg-dark">
         <Navbar.Brand as={Link} to="/"><img className='logo' src={LogoImage} alt="Spinner" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-around">
           <Nav.Link as={Link} to="/">Home</Nav.Link>
-          <Nav.Link as={Link} to="/">Coins</Nav.Link>
+          <Nav.Link as={Link} to="/coins">Coins</Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
