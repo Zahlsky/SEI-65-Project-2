@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
+import CurrencyFormat from 'react-currency-format'
 
 // import page loading spinner
 
@@ -48,34 +49,41 @@ const CoinSingle = () => {
   return(
     <Container as="main">
       <Row>
-        { coin ?
-        <> 
-        <h1>{coin.id}</h1>
-        {/* <Col md="6">
-          <img className='w-100' src={coin.image} alt={coin.name} />
-        </Col>
-        <Col md="6">
-          <div>
-            <h3><span>$</span>{coin.current_price}</h3>
-          </div>
-          <div>
-            <h3><span></span>{coin.price_change_24h}</h3>
-          </div>
-          <div>
-            <h3><span>Rank #</span>{coin.market_cap_rank}</h3>
-          </div>
-          <div>
-            <h3><span></span>{coin.price_change_24h}</h3>
-          </div>
-          <div>
-            <h3><span>Market Cap</span>{coin.market_cap}</h3>
-          </div>
+      {coin ?
+          <>
+            <h1 className='text-center mt-5'>{coin.id}</h1>
+            <Col md="12" className='text-center mt-4'>
+              <img className='w-40' src={coin.image.large} alt={coin.name} />
+            </Col>
+            <Col md="12" className='text-center mt-5'>
+              <div>
+                <h3><span>Rank #</span>{coin.market_cap_rank}</h3>
+              </div>
+              <div>
+                <h3><span>Price </span><CurrencyFormat value={coin.market_data.current_price.gbp} displayType={'text'} thousandSeparator={true} prefix={'£'} /></h3>
+              </div>
+              <div>
+                <h3><span>24h high </span><CurrencyFormat value={coin.market_data.high_24h.gbp} displayType={'text'} thousandSeparator={true} prefix={'£'} /></h3>
+              </div>
 
-          <Link to="/coins" className='btn dark'>Back to all coins</Link>
-        </Col> */}
+              <div>
+                <h3><span>24h low </span><CurrencyFormat value={coin.market_data.low_24h.gbp} displayType={'text'} thousandSeparator={true} prefix={'£'} /></h3>
+              </div>
+              <div>
+                <h3><span>Market Cap </span><CurrencyFormat value={coin.market_data.market_cap.gbp} displayType={'text'} thousandSeparator={true} prefix={'£'} /></h3>
+              </div>
+              <div>
+                <h3><span>Total Supply </span><CurrencyFormat value={coin.market_data.total_supply} displayType={'text'} thousandSeparator={true} /> <span> {coin.symbol} </span></h3>
+              </div>
+              <div>
+                <h3><span>Circulating Supply </span><CurrencyFormat value={coin.market_data.circulating_supply} displayType={'text'} thousandSeparator={true} /><span> {coin.symbol} </span></h3>
+              </div>
+
+              <Link to="/" className='btn light mt-5'>Back to all coins</Link>
+            </Col>
 
 
-        </>
+          </>
         :
 
         <h2 className="text-center">
