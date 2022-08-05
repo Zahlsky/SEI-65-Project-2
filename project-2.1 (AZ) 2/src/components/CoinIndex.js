@@ -62,10 +62,11 @@ const CoinIndex = () => {
 
   return (
     <Container as="main" className='coin-index text-center'>
+      <h3 className='text-center mb-4 mt-2'>Search Coins</h3>
       <div>
-        <input onChange={handleChange} type="text" name="search" value={search} placeholder="Search" />
+        <input onChange={handleChange} className="mb-4" type="text" name="search" value={search} placeholder="Search" />
       </div>
-      <h1 className='text-center mb-4 mt-5'>Coins</h1>
+      
       <Row>
       {filteredCoins.length > 0
           ?

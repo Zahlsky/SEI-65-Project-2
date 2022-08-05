@@ -56,7 +56,7 @@ const CoinSingle = () => {
         {coin ?
           <>
             <Row>
-              <h1 className='text-center mt-5'>{coin.id}</h1>
+              <h1 className='text-center mt-5'>{coin.name}</h1>
               <Col md="12" className='text-center mt-4'>
                 <img className='w-40' src={coin.image.large} alt={coin.name} />
               </Col>
@@ -68,7 +68,7 @@ const CoinSingle = () => {
                   <h3><span>Price </span><CurrencyFormat value={coin.market_data.current_price.gbp} displayType={'text'} thousandSeparator={true} prefix={'£'} /></h3>
                 </div>
                 <div>
-                  <h3>24hr Price change <span className={coin.market_data.price_change_percentage_24h > 0 ? "text-success" : "text-danger"}>{coin.market_data.price_change_percentage_24h > 0 ? "+" : "-"}{coin.market_data.price_change_percentage_24h}%</span></h3>
+                  <h3>24hr Price change <span className={coin.market_data.price_change_percentage_24h > 0 ? "text-success" : "text-danger"}>{coin.market_data.price_change_percentage_24h > 0 ? "+" : ""}{coin.market_data.price_change_percentage_24h}%</span></h3>
                 </div>
                 <div>
                   <h3><span>24h high </span><CurrencyFormat value={coin.market_data.high_24h.gbp} displayType={'text'} thousandSeparator={true} prefix={'£'} /></h3>
