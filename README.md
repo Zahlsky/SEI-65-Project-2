@@ -8,7 +8,7 @@ This was project 2 of the General Assembly SEI course and the very first group p
 
 ## Demo
 
-https://cryptotogo.netlify.app/coins
+https://cryptotogo.netlify.app/
 
 
 ## Timeframe & Working Team
